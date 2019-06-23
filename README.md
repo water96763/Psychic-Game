@@ -1,2 +1,2 @@
-# Psychic-Game
-homework 3 Psychic Game JavaScript
+# Word Guess-Game
+homework 3 Word Guess Game JavaScript
