@@ -21,6 +21,17 @@
         
         
     <script type="text/javascript">
+                         //let correctGuess = false;
+
+//make an array with letters
+
+        let letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        let guessedArray = []
+// make the computer choose a random letter 
+        let randomIndex = Math.round(Math.random()*10)
+        let computerChoice = letterArray[randomIndex]
+//dbl check if works
+        console.log(computerChoice)
         let wins = 0;
         let losses = 0;
         let remainingGuesses = 9;
@@ -30,17 +41,7 @@
         let winsText= document.getElementById("winsText");
         let lossesText = document.getElementById("lossesText");
         let remainingGuessesText = document.getElementById("remainingGuesses");
-                            //let correctGuess = false;
-
-//make an array with letters
-        let letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        let guessedArray = []
-// make the computer choose a random letter 
-        let randomIndex = Math.round(Math.random()*10)
-        let computerChoice = letterArray[randomIndex]
-//dbl check if works
-        console.log(computerChoice)
-
+        
                             //let triesArray = [6, 5, 4, 3, 2, 1]
                             //for (let i = 0; i < 5; i++) {
                             //alert(triesArray[i]);     
@@ -51,6 +52,8 @@
         
 //dbl check it works        
         console.log(userChoice);
+        guessedArray.push(userChoice);
+        
         
 //compare the computer choice with the person's choice
          //   function compareAnswers (userChoice, computerChoice)  {
@@ -73,14 +76,15 @@
             winsText.textContent = "wins: " + wins;
             lossesText.textContent = "losses: " + losses;
             remainingGuessesText.textContent = "Guesses remaining: " + remainingGuesses;
-                    
-         //       function gameOver() {
-           //         userChoiceText.disabled = true;
-             //       let randomIndex = Math.round(Math.random()*10)
-               //     let computerChoice = letterArray[randomIndex]
-              //  }
+            guessedArray.textContent = "Guessed letters" + guessedArray;
+
+            function gameOver() {
+                         userChoiceText.disabled = true;
+                 let randomIndex = Math.round(Math.random()*10)
+                  let computerChoice = letterArray[randomIndex]
+               }
               
-          } //closing onkeyup
+         // } //closing onkeyup
 ;
 
     </script>
