@@ -18,66 +18,62 @@
     </div>
         
         
-    <script>
+    <script type="text/javascript">
         let wordLetters = []
-        let wordsGuessedCorrectly = 0
+        let wins = 0
         let numberOfGuessesRemaining = 6
 
 
 //<!--make an array with words-->
 let wordArray = ["humuhumunukunukuapuaa", "waikiki", "beach", "kailua", "surfing", "papaya", "poke", "volcano", "aloha", "pineapple"];
+
 // make the computer choose a random word 
 let randomIndex = Math.round(Math.random()*10)
 let computerChoice = wordArray[randomIndex]
 
-//console.log(computerChoice)
 
-
-function pushIntoArray()  {
-wordLetters.push(computerChoice);
-}
+//<!--computer puts the word into another array with letters-->
+//function pushIntoArray(computerChoice)  {
+//wordLetters.push(computerChoice);
+//}
 
 //console.log(wordLetters)
 
-//let word = computerChoice
-//function dash(word) {
-   // let dash = [];
-  //  for (var i = 0; i <word.length; i++) {
- //   if (word[i] == "")
-//           dash.push("_"); 
-   //     }
- 
-//}
-//console.log(word) 
-
-//}
-
-//<!--computer puts the word into another array with letters-->
-
 //<!--show the word as blanks (not actual letters)-->
 
+function dash(wordLetters) {
+  for (var i = 0; i <word.length; i++) {
+   if (wordLetters[i] == ""){
+           dash.push("_"); }
+     }
+ 
+}
+
+console.log(wordLetters)
+
+
 //<!--have person pick a letter onkeyup-->
-<script type="text/javascript">
-      // Let's start by grabbing a reference to the <span> below.
-      var userText = document.getElementById("user-text");
+// <script type="text/javascript">
+//       // Let's start by grabbing a reference to the <span> below.
+//       var userText = document.getElementById("user-text");
 
-      // Next, we give JavaScript a function to execute when onkeyup event fires.
-      document.onkeyup = function(event) {
-        userText.textContent = event.key;
-      };
-    </script>
+//       // Next, we give JavaScript a function to execute when onkeyup event fires.
+//       document.onkeyup = function(event) {
+//         userText.textContent = event.key;
+//       };
+//   
 
-//<!--if the letter chosen is in the array, the show it-->
-//Let lettersAlreadyGuessed = container
-//<!--make a container of letters used (?use the same array?-->
+// //<!--if the letter chosen is in the array, the show it-->
+// //Let lettersAlreadyGuessed = container
+// //<!--make a container of letters used (?use the same array?-->
 
-//<!--show userChoice as a chosen letter and countdown the amount of choices until death-->
+// //<!--show userChoice as a chosen letter and countdown the amount of choices until death-->
 
-//<!--play sound if correct answer-->
+// //<!--play sound if correct answer-->
 
-//repeat game-->
+// //repeat game-->
 
-//function dash(word) {
+// //function dash(word) {
   //  var dash = [];
     //for (var i = 0; i < word.length; i++) {
      //   if (word[i] == " ") {
