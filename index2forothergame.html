@@ -11,23 +11,26 @@
     <h1>The Psychic Game</h1>
     <h2>Try to guess what letter I'm thinking of!</h2>
     <div>
+            <p id="directionsText">Press any letter to get started!</p>
+            <p id="userChoice"></p>
+            <p id="computerChoice"></p>
             <p id="winsText"></p>
             <p id="lossesText"></p>
-            <p id="remainingText"></p>
-            <p id="guessesSoFar"></p>
+            <p id="remainingGuesses"></p>
     </div>
         
         
     <script type="text/javascript">
         let wins = 0;
         let losses = 0;
-        let numberOfGuessesRemaining = 6;
+        let remaining = 9;
       
     let userChoiceText = document.getElementById("userChoice");
     let computerChoiceText = document.getElementById("computerChoice");
-    let winsText= document.getElementById("wins");
-    let lossesText = document.getElementById("losses");
-    let remainingText = document.getElementById("numberOfGuessesRemaining");
+    let winsText= document.getElementById("winsText");
+    let lossesText = document.getElementById("lossesText");
+    let remainingText = document.getElementById("remainingGuesses");
+ //   let correctGuess = false;
 
 //make an array with letters
 let letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -37,29 +40,48 @@ let randomIndex = Math.round(Math.random()*10)
 let computerChoice = letterArray[randomIndex]
 console.log(computerChoice)
 
-//have person pick a letter and capture with onkeyup
-
-    document.onkeyup = function(event) {
-    let userChoice= event.key;
-    console.log(userChoice);
-//compare the computer choice with the person's choice
-    if (userChoice === computerChoice) {
-        wins ++
+//let triesArray = [6, 5, 4, 3, 2, 1]
+//for (let i = 0; i < 5; i++) {
+ // alert(triesArray[i]);     
         
-       }
-       else {
-        numberOfGuessesRemaining --
-       }
-    
-    if (numberOfGuessesRemaining == 0) {
-           losses ++;
-       }
-    }
 
+//have person pick a letter and capture with onkeyup
+//while correctGuess = false
+        document.onkeyup = function(event) {
+                        let userChoice= event.key;
+       
+                        console.log(userChoice);
 
+        //compare the computer choice with the person's choice
+                if (userChoice === computerChoice) {
+                    wins ++;
+                    gameOver();
+                }
+                    else {
+                    remaining --;
+                    }
+
+                if (remaining = 0) {
+                losses ++;
+                gameOver();    
+                }
+
+            }
+
+  //why is this show up only when key is pressed and how to get it out  
         winsText.textContent = "wins: " + wins;
-        lossesText.textContent = "losses: " + losses;
-    
+                lossesText.textContent = "losses: " + losses;
+                remainingText.textContent = "Guesses remaining: " + remaining;
+        
+
+        function gameOver() {
+        userChoiceText.disabled = true;
+  
+        let randomIndex = Math.round(Math.random()*10)
+        let computerChoice = letterArray[randomIndex]
+        }
+
+;
 
 
 
