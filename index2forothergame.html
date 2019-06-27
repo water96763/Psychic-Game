@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>WORDS FROM HAWAII</h1>
+
+    <div>
+            <p id="directions">Start by guessing a letter!</p>
+            <p id="guessedLetters"></p>
+            <p id="wins"></p>
+            <p id="numberOfGuessesRemaining"></p>
+    </div>
+        
+        
+    <script type="text/javascript">
+        let wordLetters = []
+        let wins = 0
+        let numberOfGuessesRemaining = 6
+
+
+//<!--make an array with words-->
+let wordArray = ["humuhumunukunukuapuaa", "waikiki", "beach", "kailua", "surfing", "papaya", "poke", "volcano", "aloha", "pineapple"];
+
+// make the computer choose a random word 
+let randomIndex = Math.round(Math.random()*10)
+let computerChoice = wordArray[randomIndex]
+
+
+//<!--computer puts the word into another array with letters-->
+//function pushIntoArray(computerChoice)  {
+//wordLetters.push(computerChoice);
+//}
+
+//console.log(wordLetters)
+
+//<!--show the word as blanks (not actual letters)-->
+
+function dash(wordLetters) {
+  for (var i = 0; i <word.length; i++) {
+   if (wordLetters[i] == ""){
+           dash.push("_"); }
+     }
+ 
+}
+
+console.log(wordLetters)
+
+
+//<!--have person pick a letter onkeyup-->
+// <script type="text/javascript">
+//       // Let's start by grabbing a reference to the <span> below.
+//       var userText = document.getElementById("user-text");
+
+//       // Next, we give JavaScript a function to execute when onkeyup event fires.
+//       document.onkeyup = function(event) {
+//         userText.textContent = event.key;
+//       };
+//   
+
+// //<!--if the letter chosen is in the array, the show it-->
+// //Let lettersAlreadyGuessed = container
+// //<!--make a container of letters used (?use the same array?-->
+
+// //<!--show userChoice as a chosen letter and countdown the amount of choices until death-->
+
+// //<!--play sound if correct answer-->
+
+// //repeat game-->
+
+// //function dash(word) {
+  //  var dash = [];
+    //for (var i = 0; i < word.length; i++) {
+     //   if (word[i] == " ") {
+       //     dash.push(" ");
+      //  } else {
+       //     dash.push("_");
+     //   }
+  //  }
+  //  return dash;
+//}
+
+//var dashedSingle = dash('Testing');
+//var dashedMultiple = dash('Testing this sentence now');
+
+//(dashedSingle)
+//alert(dashedMultiple)
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
