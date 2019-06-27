@@ -4,92 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>The Psychic Game</title>
 </head>
 <body>
 
-    <h1>WORDS FROM HAWAII</h1>
-
+    <h1>The Psychic Game</h1>
+    <h2>Try to guess what letter I'm thinking of!</h2>
     <div>
-            <p id="directions">Start by guessing a letter!</p>
-            <p id="guessedLetters"></p>
-            <p id="wins"></p>
-            <p id="numberOfGuessesRemaining"></p>
+            <p id="wins">"Wins:</p>
+            <p id="losses">Losses:</p>
+            <p id="numberOfGuessesRemaining">Guesses remaining:</p>
+            <p id="guessesSoFar">Letters Guessed so far</p>
     </div>
         
         
     <script type="text/javascript">
-        let wordLetters = []
         let wins = 0
+        let losses = 0
         let numberOfGuessesRemaining = 6
 
+      
+    let userChoiceText = document.getElementById("userChoice");
+    let computerChoiceText = document.getElementById("computerChoice");
+    let winsText = document.getElementById("wins");
+    let lossesText = document.getElementById("losses");
+    let tiesText = document.getElementById("numberOfGuessesRemaining");
 
-//<!--make an array with words-->
-let wordArray = ["humuhumunukunukuapuaa", "waikiki", "beach", "kailua", "surfing", "papaya", "poke", "volcano", "aloha", "pineapple"];
-
-// make the computer choose a random word 
+//make an array with letters
+let letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let guessedArray = []
+// make the computer choose a random letter 
 let randomIndex = Math.round(Math.random()*10)
-let computerChoice = wordArray[randomIndex]
+let computerChoice = letterArray[randomIndex]
+console.log(computerChoice)
+
+//have person pick a letter and capture with onkeyup
+
+    document.onkeyup = function(event) {
+    let userChoice= event.key;
+    console.log(userChoice);
+//compare the computer choice with the person's choice
+    if (userChoice === computerChoice) {
+        wins ++
+        
+       }
+       else {
+        numberOfGuessesRemaining --
+       }
+    
+    if (numberOfGuessesRemaining == 0) {
+           losses ++;
+       }
+    }
 
 
-//<!--computer puts the word into another array with letters-->
-//function pushIntoArray(computerChoice)  {
-//wordLetters.push(computerChoice);
-//}
-
-//console.log(wordLetters)
-
-//<!--show the word as blanks (not actual letters)-->
-
-function dash(wordLetters) {
-  for (var i = 0; i <word.length; i++) {
-   if (wordLetters[i] == ""){
-           dash.push("_"); }
-     }
- 
-}
-
-console.log(wordLetters)
+        winsText.textContent = "wins: " + wins;
+        lossesText.textContent = "losses: " + losses;
+    
 
 
-//<!--have person pick a letter onkeyup-->
-// <script type="text/javascript">
-//       // Let's start by grabbing a reference to the <span> below.
-//       var userText = document.getElementById("user-text");
-
-//       // Next, we give JavaScript a function to execute when onkeyup event fires.
-//       document.onkeyup = function(event) {
-//         userText.textContent = event.key;
-//       };
-//   
-
-// //<!--if the letter chosen is in the array, the show it-->
-// //Let lettersAlreadyGuessed = container
-// //<!--make a container of letters used (?use the same array?-->
-
-// //<!--show userChoice as a chosen letter and countdown the amount of choices until death-->
-
-// //<!--play sound if correct answer-->
-
-// //repeat game-->
-
-// //function dash(word) {
-  //  var dash = [];
-    //for (var i = 0; i < word.length; i++) {
-     //   if (word[i] == " ") {
-       //     dash.push(" ");
-      //  } else {
-       //     dash.push("_");
-     //   }
-  //  }
-  //  return dash;
-//}
-
-//var dashedSingle = dash('Testing');
-//var dashedMultiple = dash('Testing this sentence now');
-
-//(dashedSingle)
-//alert(dashedMultiple)
 
 
 
