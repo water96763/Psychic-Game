@@ -8,14 +8,20 @@
 </head>
 <body>
 
+    <h1>WORDS FROM HAWAII</h1>
+
+    <div>
+            <p id="directions">Start by guessing a letter!</p>
+            <p id="guessedLetters"></p>
+            <p id="wins"></p>
+            <p id="numberOfGuessesRemaining"></p>
+    </div>
+        
+        
     <script>
-    
-  //  <h1>WORDS FROM HAWAII</h1>
-
-//<h2> Press any key to get started!</h2>
-
-//let wordsGuessedCorrectly = 0
-//let numberOfGuessesRemaining = 6
+        let wordLetters = []
+        let wordsGuessedCorrectly = 0
+        let numberOfGuessesRemaining = 6
 
 
 //<!--make an array with words-->
@@ -26,29 +32,40 @@ let computerChoice = wordArray[randomIndex]
 
 //console.log(computerChoice)
 
-let wordLetters = []
-function pushIntoArray() {
-    wordLetters.push(computerChoice);
-    document.getElementById().innerHTML = pushIntoArray;
+
+function pushIntoArray()  {
+wordLetters.push(computerChoice);
+}
+
+//console.log(wordLetters)
 
 //let word = computerChoice
-function dash(word) {
+//function dash(word) {
    // let dash = [];
-    for (var i = 0; i <word.length; i++) {
-    
-           dash.push("_"); 
-        }
+  //  for (var i = 0; i <word.length; i++) {
+ //   if (word[i] == "")
+//           dash.push("_"); 
+   //     }
  
-}
-console.log(word) 
+//}
+//console.log(word) 
 
-}
+//}
 
 //<!--computer puts the word into another array with letters-->
 
 //<!--show the word as blanks (not actual letters)-->
 
 //<!--have person pick a letter onkeyup-->
+<script type="text/javascript">
+      // Let's start by grabbing a reference to the <span> below.
+      var userText = document.getElementById("user-text");
+
+      // Next, we give JavaScript a function to execute when onkeyup event fires.
+      document.onkeyup = function(event) {
+        userText.textContent = event.key;
+      };
+    </script>
 
 //<!--if the letter chosen is in the array, the show it-->
 //Let lettersAlreadyGuessed = container
@@ -85,7 +102,7 @@ console.log(word)
 
 
 
-</script>
+    </script>
 
 
 </body>
