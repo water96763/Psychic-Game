@@ -12,11 +12,12 @@
     <h2>Try to guess what letter I'm thinking of!</h2>
     <div>
             <p id="directionsText">Press any letter to get started!</p>
-            <p id="userChoice"></p>
             <p id="computerChoice"></p>
             <p id="winsText"></p>
             <p id="lossesText"></p>
             <p id="remainingGuesses"></p>
+            <p id="guessedArray"></p>
+            <p id="userChoice"></p>
     </div>
         
         
@@ -32,16 +33,17 @@
         let computerChoice = letterArray[randomIndex]
 //dbl check if works
         console.log(computerChoice)
+       
+       
         let wins = 0;
         let losses = 0;
         let remainingGuesses = 9;
       
-        let userChoiceText = document.getElementById("userChoice");
         let computerChoiceText = document.getElementById("computerChoice");
         let winsText= document.getElementById("winsText");
         let lossesText = document.getElementById("lossesText");
         let remainingGuessesText = document.getElementById("remainingGuesses");
-        
+        let userChoiceText = document.getElementById("")
                             //let triesArray = [6, 5, 4, 3, 2, 1]
                             //for (let i = 0; i < 5; i++) {
                             //alert(triesArray[i]);     
@@ -52,8 +54,7 @@
         
 //dbl check it works        
         console.log(userChoice);
-        guessedArray.push(userChoice);
-        
+   
         
 //compare the computer choice with the person's choice
          //   function compareAnswers (userChoice, computerChoice)  {
@@ -65,7 +66,7 @@
                         remainingGuesses --;
                     }                    
                 }            
-            function decreaseGuesses (remainingGuesses) {
+            function decreaseGuesses(remainingGuesses) {
                 if (remainingGuesses = 0) {
                         losses ++;
                         gameOver();    
@@ -78,8 +79,12 @@
             remainingGuessesText.textContent = "Guesses remaining: " + remainingGuesses;
             guessedArray.textContent = "Guessed letters" + guessedArray;
 
+            function pushIntoArray() {
+            guessedArray.push(userChoice);
+            document.getElementById(userChoice).innerHTML = guessedArray;
+        }
             function gameOver() {
-                         userChoiceText.disabled = true;
+                         userChoice.disabled = true;
                  let randomIndex = Math.round(Math.random()*10)
                   let computerChoice = letterArray[randomIndex]
                }
