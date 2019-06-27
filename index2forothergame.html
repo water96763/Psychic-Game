@@ -11,24 +11,23 @@
     <h1>The Psychic Game</h1>
     <h2>Try to guess what letter I'm thinking of!</h2>
     <div>
-            <p id="wins">"Wins:</p>
-            <p id="losses">Losses:</p>
-            <p id="numberOfGuessesRemaining">Guesses remaining:</p>
-            <p id="guessesSoFar">Letters Guessed so far</p>
+            <p id="winsText"></p>
+            <p id="lossesText"></p>
+            <p id="remainingText"></p>
+            <p id="guessesSoFar"></p>
     </div>
         
         
     <script type="text/javascript">
-        let wins = 0
-        let losses = 0
-        let numberOfGuessesRemaining = 6
-
+        let wins = 0;
+        let losses = 0;
+        let numberOfGuessesRemaining = 6;
       
     let userChoiceText = document.getElementById("userChoice");
     let computerChoiceText = document.getElementById("computerChoice");
-    let winsText = document.getElementById("wins");
+    let winsText= document.getElementById("wins");
     let lossesText = document.getElementById("losses");
-    let tiesText = document.getElementById("numberOfGuessesRemaining");
+    let remainingText = document.getElementById("numberOfGuessesRemaining");
 
 //make an array with letters
 let letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
