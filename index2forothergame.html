@@ -53,7 +53,7 @@
         console.log(userChoice);
         
 //compare the computer choice with the person's choice
-            function compareAnswers ()  {
+         //   function compareAnswers (userChoice, computerChoice)  {
                 if (userChoice === computerChoice) {
                         wins ++;
                         gameOver();
@@ -61,23 +61,26 @@
                 else {
                         remainingGuesses --;
                     }                    
-
+                }            
+            function decreaseGuesses (remainingGuesses) {
                 if (remainingGuesses = 0) {
                         losses ++;
                         gameOver();    
-                        }
-    //how come this shows up only when key is pressed and how to get it out  
-                winsText.textContent = "wins: " + wins;
-                lossesText.textContent = "losses: " + losses;
-                remainingGuessesText.textContent = "Guesses remaining: " + remainingGuesses;
                     }
+                }
+            
+    //how come this shows up only when key is pressed and how to get it out  
+            winsText.textContent = "wins: " + wins;
+            lossesText.textContent = "losses: " + losses;
+            remainingGuessesText.textContent = "Guesses remaining: " + remainingGuesses;
+                    
          //       function gameOver() {
            //         userChoiceText.disabled = true;
              //       let randomIndex = Math.round(Math.random()*10)
                //     let computerChoice = letterArray[randomIndex]
               //  }
               
-        } 
+          } //closing onkeyup
 ;
 
     </script>
