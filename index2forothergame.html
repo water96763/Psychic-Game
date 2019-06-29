@@ -1,100 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Psychic Game</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The Psychic Game</title>
+    </head> 
 
-    <h1>The Psychic Game</h1>
-    <h2>Try to guess what letter I'm thinking of!</h2>
-    <div>
-            <p id="directionsText">Press any letter to get started!</p>
-            <p id="computerChoice"></p>
-            <p id="winsText">Wins: 0</p>
-            <p id="lossesText">Losses: 0</p>
-            <p id="remainingGuesses">Number of remaining guesses: 0</p>
-            <p id="guessedArray">Letters already chosen</p>
-            <p id="userChoice"></p>
-    </div>
-        
-        
-    <script type="text/javascript">
-                         //let correctGuess = false;
+    <body>
 
-//make an array with letters
-
-        let letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        let guessedArray = []
-        // make the computer choose a random letter 
-        let randomIndex = Math.round(Math.random() * 10)
-        let computerChoice = letterArray[randomIndex]
-        //dbl check if works
-        console.log(computerChoice)
-
-
-        let wins = 0;
-        let losses = 0;
-        let remainingGuesses = 9;
-
-        let computerChoiceText = document.getElementById("computerChoice");
-        let winsText= document.getElementById("winsText");
-        let lossesText = document.getElementById("lossesText");
-        let remainingGuessesText = document.getElementById("remainingGuesses");
-        let userChoiceText = document.getElementById("")
-        //let triesArray = [6, 5, 4, 3, 2, 1]
-        //for (let i = 0; i < 5; i++) {
-        //alert(triesArray[i]);     
-
-        //have person pick a letter and capture with onkeyup
-        document.onkeyup = function (event) {
-            let userChoice = event.key;
-
-            //dbl check it works        
-            console.log(userChoice);
-
-
-            //compare the computer choice with the person's choice
-            //   function compareAnswers (userChoice, computerChoice)  {
-            if (userChoice === computerChoice) {
-                wins++;
-                gameOver();
-            } else {
-                remainingGuesses--;
-            }
-
+        <h1>The Psychic Game</h1>
+        <h2>Try to guess what letter I'm thinking of!</h2>
+        <div>
+                <p id="directionsText">Press any letter to get started!</p>
+                <p id="computerChoice"></p>
+                <p id="winsText">Wins: 0</p>
+                <p id="lossesText">Losses: 0</p>
+                <p id="remainingGuesses">Number of remaining guesses: 0</p>
+                <p id="guessedArray">Letters already chosen</p>
+                <p id="userChoice"></p>
+        </div>
             
-            function pushIntoArray() {
-                guessedArray.push(userChoice);
-                document.getElementById(userChoice).innerHTML = guessedArray;
-            }
-            function gameOver() {
-                userChoice.disabled = true;
-                let randomIndex = Math.round(Math.random() * 10)
-                let computerChoice = letterArray[randomIndex]
-            }
+            
+        <script type="text/javascript">
             
 
-            function decreaseGuesses(num) {
-                if (num === 0) {
-                    losses++;
+            //make an array with letters
+            let letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+            let guessedArray = []
+            // make the computer choose a random letter 
+            let randomIndex = Math.round(Math.random() * 10)
+            let computerChoice = letterArray[randomIndex]
+            //dbl check if works
+            console.log(computerChoice)
+            //set to starting values
+            let wins = 0;
+            let losses = 0;
+            let remainingGuesses = 9;
+            //linking html with javascript below
+            let computerChoiceText = document.getElementById("computerChoice");
+            let winsText= document.getElementById("winsText");
+            let lossesText = document.getElementById("lossesText");
+            let remainingGuessesText = document.getElementById("remainingGuesses");
+            let userChoiceText = document.getElementById("")
+        
+            
+            document.onkeyup = function (event) {       //have person pick a letter and capture with onkeyup
+                let userChoice = event.key;
+                console.log(userChoice);                //dbl check it works   
+                if (userChoice === computerChoice) {    //compare the computer choice with the person's choice
+                    wins++;
                     gameOver();
+                } else {
+                    remainingGuesses--;
                 }
-            }
-
-            //how come this shows up only when key is pressed and how to get it out  
-            winsText.textContent = "wins: " + wins;
-            lossesText.textContent = "losses: " + losses;
-            remainingGuessesText.textContent = "Guesses remaining: " + remainingGuesses;
-            guessedArray.textContent = "Guessed letters" + guessedArray;
 
                 
-        } //closing onkeyup
+                function pushIntoArray() {
+                    guessedArray.push(userChoice);
+                    document.getElementById(userChoice).innerHTML = guessedArray;
+                }
+                function gameOver() {
+                    userChoice.disabled = true;
+                    let randomIndex = Math.round(Math.random() * 10)
+                    let computerChoice = letterArray[randomIndex]
+                }
+                
 
-    </script>
+                function losses(num) {
+                    if (num === 0) {
+                        losses++;
+                        gameOver();
+                    }
+                }
+
+                //how come this shows up only when key is pressed and how to get it out  
+                winsText.textContent = "wins: " + wins;
+                lossesText.textContent = "losses: " + losses;
+                remainingGuessesText.textContent = "Guesses remaining: " + remainingGuesses;
+                guessedArray.textContent = "Guessed letters" + guessedArray;
+
+                    
+            } //closing onkeyup
+
+            </script>
 
 
-</body>
+        </body>
 </html>
